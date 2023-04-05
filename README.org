@@ -1,0 +1,27 @@
+* Network of Mastodon instances
+
+Visualize the network of all Mastodon instances visible from your home
+feed. There is an edge between instances A and B if someone from
+instance A boosted a post from instance B.
+
+/Inspired by [[https://mastodon.social/@judell/110147142486697213][this post]] from Jon Udell./
+
+** Requirements
+
+This tool requires Awk, [[https://graphviz.org/][Graphviz]], and [[https://steampipe.io/][Steampipe]] with its [[https://hub.steampipe.io/plugins/turbot/mastodon][Mastodon plugin]].
+
+Create a [[https://docs.joinmastodon.org/client/token/][Mastodon API token]] (Preferences → Development → New
+application), and fill the ~access_token~ field in
+=~/.steampipe/config/mastodon.spc=. (You can also set ~max_toots=-1~.)
+
+** Instructions
+
+Run =make=.
+
+You get the visualization in PNG and SVG format.
+
+** Example
+
+From my home timeline on 2023-04-05, with 679 toots.
+
+[[./instances.svg]]
